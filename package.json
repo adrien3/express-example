@@ -5,19 +5,19 @@
   "scripts": {
     "start": "DEBUG=express-sequelize node ./bin/www",
     "test": "npm run test-unit && npm run test-integration",
-    "test-unit": "cross-env NODE_ENV=test ./node_modules/.bin/mocha test/unit/*.test.js",
-    "test-integration": "cross-env NODE_ENV=test ./node_modules/.bin/mocha test/integration/*.test.js"
+    "test-unit": "./node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=test ./node_modules/.bin/mocha test/unit/*.test.js",
+    "test-integration": "./node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=test ./node_modules/.bin/mocha test/integration/*.test.js"
   },
   "dependencies": {
-    "body-parser": "^1.18.1",
+    "body-parser": "^1.18.2",
     "cookie-parser": "^1.4.3",
     "debug": "~3.0.1",
-    "express": "^4.15.4",
-    "helmet": "^3.8.1",
-    "morgan": "^1.8.2",
+    "express": "^4.16.0",
+    "helmet": "^3.8.2",
+    "morgan": "^1.9.0",
     "mysql2": "^1.4.2",
-    "sequelize": "^4.8.4",
-    "sequelize-cli": "^3.0.0-3"
+    "sequelize": "^4.11.5",
+    "sequelize-cli": "^3.0.0"
   },
   "devDependencies": {
     "bluebird": "^3.5.0",
