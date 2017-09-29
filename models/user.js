@@ -46,6 +46,9 @@ module.exports = function (sequelize, DataTypes) {
         User.belongsToMany(models.Task, {
             through: 'task_user'
         });
+        User.belongsToMany(models.RoundFamily, {
+            through: 'round_family_user'
+        });
     }
 
     return User;
