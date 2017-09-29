@@ -5,6 +5,7 @@ const router  = express.Router();
 /**
  * Return the users list, can be filtered by user role
  * @param role (optionnel) : supervisor | operator | plant manager
+ * @return The user list, filtered or not
  */
 router.get('', (req, res) => {
   let query = {};
