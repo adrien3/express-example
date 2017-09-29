@@ -1,6 +1,6 @@
 {
-  "name": "express-example",
-  "version": "0.0.0",
+  "name": "round_integrator",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "DEBUG=express-sequelize node ./bin/www",

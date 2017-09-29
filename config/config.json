@@ -2,7 +2,21 @@
   "development": {
     "username": "root",
     "password": "altran",
-    "database": "mabase",
+    "database": "round_integrator_dev",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "altran",
+    "database": "round_integrator_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": "altran",
+    "database": "round_integrator",
     "host": "127.0.0.1",
     "dialect": "mysql"
   }
