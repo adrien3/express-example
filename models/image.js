@@ -20,8 +20,18 @@ module.exports = function (sequelize, DataTypes) {
                 }
             },
             allowNull: false
+        },
+        fk_alert_id: {
+            type: DataTypes.Integer
         }
     });
+
+    Image.associate = function (models) {
+        Image.belongsTo(models.Alert, {
+            foreignKey: 'id',
+            targetKey: 'fk_alert_id'
+        });
+    }
 
     return Image;
 }
