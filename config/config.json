@@ -9,7 +9,7 @@
   "test": {
     "username": "root",
     "password": "altran",
-    "database": "round_integrator_test",
+    "database": "round_integrator_dev",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
