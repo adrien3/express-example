@@ -7,7 +7,7 @@ module.exports = function (sequelize, DataTypes) {
             autoIncrement: true,
             primaryKey: true
         },
-        name: {
+        url: {
             type: DataTypes.STRING,
             validate: {
                 min: {
@@ -15,13 +15,23 @@ module.exports = function (sequelize, DataTypes) {
                     msg: ''
                 },
                 max: {
-                    args: 25,
+                    args: 500,
                     msg: ''
                 }
             },
             allowNull: false
+        },
+        fk_alert_id: {
+            type: DataTypes.Integer
         }
     });
+
+    Image.associate = function (models) {
+        Image.belongsTo(models.Alert, {
+            foreignKey: 'id',
+            targetKey: 'fk_alert_id'
+        });
+    }
 
     return Image;
 }
