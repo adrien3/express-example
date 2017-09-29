@@ -22,14 +22,14 @@ module.exports = function (sequelize, DataTypes) {
         },
         language: {
             type: DataTypes.STRING,
-            allowNull = false,
+            allowNull: false,
             validade: {
-                notEmpty = true
+                notEmpty: true
             }
         },
         description: {
             type: DataTypes.STRING,
-            allowNull = false,
+            allowNull: false,
             validate: {
                 min: {
                     args: 2,
@@ -47,9 +47,9 @@ module.exports = function (sequelize, DataTypes) {
             },
             attribute_to: {
                 type: DataTypes.STRING,
-                allowNull = false,
+                allowNull:false,
                 validade: {
-                    notEmpty = true
+                    notEmpty:true
                 }
             },
             date_assigned: {
