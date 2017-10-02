@@ -64,7 +64,7 @@ module.exports = function (sequelize, DataTypes) {
     Alert.associate = function (models) {
         Alert.hasMany(models.Image, {
             foreignKey: 'id',
-            sourceKey: 'fk_alert_id'
+            targetKey: 'fk_alert_id'
         });
     }
 

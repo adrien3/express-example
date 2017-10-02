@@ -22,14 +22,14 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false
         },
         fk_alert_id: {
-            type: DataTypes.Integer
+            type: DataTypes.INTEGER
         }
     });
 
     Image.associate = function (models) {
         Image.belongsTo(models.Alert, {
             foreignKey: 'id',
-            targetKey: 'fk_alert_id'
+            sourceKey: 'fk_alert_id'
         });
     }
 
