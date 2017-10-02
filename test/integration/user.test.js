@@ -18,4 +18,8 @@ describe('WS user', function () {
     request(app).get('/users?role=supervisor').expect(200, done);
   });
 
+  it('getUser(user_id) user 1', function (done) {
+    request(app).get('/users/1').expect(200, done);
+  });
+
 });
