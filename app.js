@@ -7,8 +7,8 @@ const helmet        = require('helmet');
 
 const routes              = require('./routes/index');
 const routes_users        = require('./routes/users');
-const routes_plantConfig  = require('./routes/plant_config');
-const routes_shift        = require('./routes/shift');
+const routes_plantConfigs = require('./routes/plant_configs');
+const routes_shifts       = require('./routes/shifts');
 
 
 const app = express();
@@ -26,8 +26,8 @@ app.use(helmet());
 
 app.use('/', routes);
 app.use('/users', routes_users);
-app.use('/plantconfigs', routes_plantConfig);
-app.use('/shifts', routes_shift);
+app.use('/plantconfigs', routes_plantConfigs);
+app.use('/shifts', routes_shifts);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
