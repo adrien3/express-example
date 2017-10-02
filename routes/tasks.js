@@ -91,4 +91,68 @@ router.delete('/:id_task', (req, res) => {
     });
 });
 
+/**
+ * Duplication of an existing task object, return the task object clone
+ * @param id_task : Id to find the task object to duplicate
+ * @return Return duplicate task object by given id
+ */
+router.post('/:id_task/duplicate', (req, res) => {
+    models.Task.findOne({
+      where: {
+        id : req.params.id_task
+      }
+    }).then((task) => {
+      // empty the ID and the createdAt before the duplication
+      task.dataValues.id = null;
+      task.dataValues.createdAt = null;
+      models.Task.create(task.dataValues).then(new_task => {
+        res.json(new_task);
+      })
+    .catch((error) => {
+      // error 
+      res.json(error);
+    });
+    })
+    .catch((error) => {
+      // error 
+      res.json(error);
+    });
+});
+
+/**
+ * Validation of a task object [mobile app access], return task object modified
+ * @param id_task : Id to find the task object to change the status
+ * @return Return task object modified [mobile app access]
+ */
+router.put('/:id_task/validate', (req, res) => {
+    models.Task.findOne({
+      where: {
+        id : req.params.id_task
+      }
+    }).then((task) => {
+      // change the status to TRUE to validate the Task
+      task.dataValues.status = true;
+
+      models.Task.update(task.dataValues, { 
+      where: { id: req.params.id_task }
+     }).then(edit_task => {
+        models.Task.findById(req.params.id_task).then((edit_task) => {
+          res.json(edit_task);
+        })
+        .catch((error) => {
+          // error 
+          res.json(error);
+        });
+    })
+    .catch((error) => {
+      // error 
+      res.json(error);
+    });
+  })
+  .catch((error) => {
+    // error 
+    res.json(error);
+  });
+});
+
 module.exports = router;

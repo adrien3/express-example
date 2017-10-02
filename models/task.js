@@ -39,29 +39,29 @@ module.exports = function (sequelize, DataTypes) {
                     args: 250,
                     masg: ''
                 }
-            },
-            status: {
-                type: DataTypes.BOOLEAN,
-                defaultValue: false,
-                allowNull: false
-            },
-            attribute_to: {
-                type: DataTypes.STRING,
-                allowNull: false,
-                validade: {
-                    notEmpty: true
-                }
-            },
-            date_assigned: {
-                type: DataTypes.DATE,
-                allowNull: false,
-                defaultValue: DataTypes.NOW
-            },
-            last_update: {
-                type: DataTypes.DATE,
-                allowNull: false,
-                defaultValue: DataTypes.NOW
             }
+        },
+        status: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false,
+            allowNull: false
+        },
+        attribute_to: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validade: {
+                notEmpty: true
+            }
+        },
+        date_assigned: {
+            type: DataTypes.DATE,
+            allowNull: false,
+            defaultValue: DataTypes.NOW
+        },
+        last_update: {
+            type: DataTypes.DATE,
+            allowNull: false,
+            defaultValue: DataTypes.NOW
         }
     });
 
