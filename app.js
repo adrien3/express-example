@@ -9,6 +9,7 @@ const routes              = require('./routes/index');
 const routes_users        = require('./routes/users');
 const routes_plantConfigs = require('./routes/plant_configs');
 const routes_shifts       = require('./routes/shifts');
+const routes_tasks        = require('./routes/tasks');
 
 
 const app = express();
@@ -28,6 +29,7 @@ app.use('/', routes);
 app.use('/users', routes_users);
 app.use('/plantconfigs', routes_plantConfigs);
 app.use('/shifts', routes_shifts);
+app.use('/tasks', routes_tasks);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
