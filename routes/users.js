@@ -25,7 +25,7 @@ router.get('', (req, res) => {
 
 
 /**
- * Return the user byt the given id
+ * Return the user by the given id
  * @param user_id : The user id to get the user object
  * @return Return the user object by the id
  */

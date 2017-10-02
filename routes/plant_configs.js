@@ -13,5 +13,21 @@ router.get('', (req, res) => {
   });
 });
 
+/**
+ * Create a PlantConfig
+ * @param plantConfig : The PlantConfig object to create
+ * @return Return the PlantConfig created
+ */
+router.post('', (req, res) => {
+  if(req.body){
+    models.PlantConfig.create(req.body).then(new_plantConfig => {
+      res.json(new_plantConfig);
+    })
+    .catch((error) => {
+      // error 
+      res.json(error);
+    });
+  }
+});
 
 module.exports = router;
