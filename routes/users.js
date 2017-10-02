@@ -26,13 +26,13 @@ router.get('', (req, res) => {
 
 /**
  * Return the user byt the given id
- * @param id_user : The user id to get the user object
+ * @param user_id : The user id to get the user object
  * @return Return the user object by the id
  */
-router.get('/:id_user', (req, res) => {
+router.get('/:user_id', (req, res) => {
     models.User.findAll({
       where: {
-        id : request.params.id_user
+        id : req.params.user_id
       }
     })
     .then((fetchData) => {
